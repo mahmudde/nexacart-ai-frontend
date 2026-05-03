@@ -1,4 +1,4 @@
-import { apiClient } from "@/lib/api-client";
+import { apiClient, publicApiClient } from "@/lib/api-client";
 import type { ApiResponse } from "@/types/api.types";
 import type { Blog } from "@/types";
 import { createQueryString } from "@/utils/create-query-string";
@@ -24,7 +24,7 @@ export const blogService = {
   getBlogs: async (query: BlogQuery = {}) => {
     const queryString = createQueryString(query);
 
-    const { data } = await apiClient.get<ApiResponse<Blog[]>>(
+    const { data } = await publicApiClient.get<ApiResponse<Blog[]>>(
       `/blogs${queryString ? `?${queryString}` : ""}`
     );
 
@@ -32,13 +32,16 @@ export const blogService = {
   },
 
   getBlogBySlug: async (slug: string) => {
-    const { data } = await apiClient.get<ApiResponse<Blog>>(`/blogs/${slug}`);
+    const { data } = await publicApiClient.get<ApiResponse<Blog>>(
+      `/blogs/${slug}`
+    );
 
     return data;
   },
 
   createBlog: async (payload: CreateBlogPayload) => {
     const { data } = await apiClient.post<ApiResponse<Blog>>("/blogs", payload);
+
     return data;
   },
 
@@ -53,6 +56,7 @@ export const blogService = {
 
   deleteBlog: async (id: string) => {
     const { data } = await apiClient.delete<ApiResponse<null>>(`/blogs/${id}`);
+
     return data;
   },
 };

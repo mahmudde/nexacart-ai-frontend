@@ -15,7 +15,7 @@ export default function ApiTestPage() {
         <div>
           <h1 className="text-4xl font-semibold">API Test</h1>
           <p className="mt-2 text-muted-foreground">
-            Testing frontend connection with the NexaCart AI backend.
+            Testing frontend connection with the Velora backend.
           </p>
         </div>
 

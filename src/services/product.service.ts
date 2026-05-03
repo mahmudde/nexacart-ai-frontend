@@ -1,4 +1,4 @@
-import { apiClient } from "@/lib/api-client";
+import { apiClient, publicApiClient } from "@/lib/api-client";
 import type { ApiResponse } from "@/types/api.types";
 import type { Product } from "@/types";
 import { createQueryString } from "@/utils/create-query-string";
@@ -48,7 +48,7 @@ export const productService = {
   getProducts: async (query: ProductQuery = {}) => {
     const queryString = createQueryString(query);
 
-    const { data } = await apiClient.get<ApiResponse<Product[]>>(
+    const { data } = await publicApiClient.get<ApiResponse<Product[]>>(
       `/products${queryString ? `?${queryString}` : ""}`
     );
 
@@ -56,7 +56,7 @@ export const productService = {
   },
 
   getTrendingProducts: async () => {
-    const { data } = await apiClient.get<ApiResponse<Product[]>>(
+    const { data } = await publicApiClient.get<ApiResponse<Product[]>>(
       "/products/trending"
     );
 
@@ -64,7 +64,7 @@ export const productService = {
   },
 
   getProductBySlug: async (slug: string) => {
-    const { data } = await apiClient.get<ApiResponse<Product>>(
+    const { data } = await publicApiClient.get<ApiResponse<Product>>(
       `/products/${slug}`
     );
 
@@ -72,7 +72,7 @@ export const productService = {
   },
 
   getRelatedProducts: async (id: string) => {
-    const { data } = await apiClient.get<ApiResponse<Product[]>>(
+    const { data } = await publicApiClient.get<ApiResponse<Product[]>>(
       `/products/${id}/related`
     );
 

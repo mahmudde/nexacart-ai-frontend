@@ -9,7 +9,7 @@ import {
 
 const faqs = [
   {
-    question: "How does NexaCart AI recommend products?",
+    question: "How does Velora recommend products?",
     answer:
       "It uses product trends, ratings, top-selling data, and user activity to suggest products that match shopping intent.",
   },
@@ -37,7 +37,7 @@ export function FaqSection() {
         centered
         eyebrow="FAQ"
         title="Questions shoppers ask"
-        description="Everything you need to know about shopping with NexaCart AI."
+        description="Everything you need to know about shopping with Velora."
       />
 
       <div className="glass mx-auto max-w-3xl rounded-[2rem] p-4">

@@ -38,7 +38,7 @@ export default function TermsPage() {
         <PublicPageHero
           eyebrow="Terms and Conditions"
           title="Marketplace terms for safe shopping."
-          description="These terms describe responsible use of NexaCart AI, including accounts, orders, payments, reviews, and dashboard access."
+          description="These terms describe responsible use of Velora, including accounts, orders, payments, reviews, and dashboard access."
           icon={FileText}
         />
 

@@ -24,7 +24,7 @@ export function BlogCard({ blog }: BlogCardProps) {
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-muted text-muted-foreground">
-            NexaCart AI
+            Velora
           </div>
         )}
       </div>

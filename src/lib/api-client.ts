@@ -2,12 +2,13 @@ import axios, { AxiosError } from "axios";
 import { siteConfig } from "@/config/site";
 import type { ApiErrorResponse } from "@/types/api.types";
 
+export const publicApiClient = axios.create({
+  baseURL: siteConfig.apiBaseUrl,
+});
+
 export const apiClient = axios.create({
   baseURL: siteConfig.apiBaseUrl,
   withCredentials: true,
-  headers: {
-    "Content-Type": "application/json",
-  },
 });
 
 export const getApiErrorMessage = (error: unknown) => {

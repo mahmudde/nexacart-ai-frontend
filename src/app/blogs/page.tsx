@@ -39,7 +39,7 @@ export default function BlogsPage() {
 
             <p className="mx-auto mt-6 max-w-2xl leading-8 text-muted-foreground md:text-lg">
               Explore buying guides, product tips, AI shopping insights, and
-              marketplace updates from NexaCart AI.
+              marketplace updates from Velora.
             </p>
           </div>
         </section>

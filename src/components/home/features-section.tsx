@@ -40,7 +40,7 @@ export function FeaturesSection() {
     <SectionWrapper>
       <SectionHeader
         centered
-        eyebrow="Why NexaCart AI"
+        eyebrow="Why Velora"
         title="Everything modern shoppers expect"
         description="A complete premium marketplace experience with speed, intelligence, security, and trust."
       />

@@ -44,7 +44,7 @@ export function NewsletterSection() {
 
         <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
           Subscribe to receive product tips, trending picks, and marketplace
-          updates from NexaCart AI.
+          updates from Velora.
         </p>
 
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-3 rounded-full border border-border bg-background/60 p-2 backdrop-blur-xl sm:flex-row">

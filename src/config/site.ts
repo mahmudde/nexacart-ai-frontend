@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "NexaCart AI",
+  name: "Velora",
   description:
-    "An AI-powered e-commerce marketplace with smart recommendations, secure checkout, and premium shopping experiences.",
+    "A premium AI-powered marketplace with curated collections, intelligent recommendations, and seamless checkout.",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   apiBaseUrl:
     process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api",

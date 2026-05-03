@@ -1,4 +1,4 @@
-import { apiClient } from "@/lib/api-client";
+import { apiClient, publicApiClient } from "@/lib/api-client";
 import type { ApiResponse } from "@/types/api.types";
 import type { Category } from "@/types";
 import { createQueryString } from "@/utils/create-query-string";
@@ -23,7 +23,7 @@ export const categoryService = {
   getCategories: async (query: CategoryQuery = {}) => {
     const queryString = createQueryString(query);
 
-    const { data } = await apiClient.get<ApiResponse<Category[]>>(
+    const { data } = await publicApiClient.get<ApiResponse<Category[]>>(
       `/categories${queryString ? `?${queryString}` : ""}`
     );
 
@@ -31,7 +31,7 @@ export const categoryService = {
   },
 
   getCategoryById: async (id: string) => {
-    const { data } = await apiClient.get<ApiResponse<Category>>(
+    const { data } = await publicApiClient.get<ApiResponse<Category>>(
       `/categories/${id}`
     );
 

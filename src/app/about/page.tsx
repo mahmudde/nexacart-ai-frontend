@@ -36,9 +36,9 @@ export default function AboutPage() {
     <PublicLayout>
       <main>
         <PublicPageHero
-          eyebrow="About NexaCart AI"
+          eyebrow="About Velora"
           title="A smarter marketplace for modern shoppers."
-          description="NexaCart AI combines e-commerce, secure payments, role-based dashboards, and AI assistance to create a premium shopping experience."
+          description="Velora combines e-commerce, secure payments, role-based dashboards, and AI assistance to create a premium shopping experience."
           icon={Sparkles}
         />
 

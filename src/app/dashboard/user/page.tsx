@@ -19,7 +19,7 @@ export default function UserDashboardPage() {
       <div className="space-y-8">
         <div className="rounded-xl border border-border bg-background p-8 shadow-sm">
           <p className="mb-3 text-sm text-muted-foreground">
-            Welcome back to NexaCart AI
+            Welcome back to Velora
           </p>
           <h1 className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
             User Dashboard

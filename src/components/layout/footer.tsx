@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Code, Globe, Link as LinkIcon, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { Code, Gem, Globe, Link as LinkIcon, Mail, MapPin, Phone } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 
@@ -31,7 +31,7 @@ export function Footer() {
         <div className="lg:col-span-2">
           <Link href="/" className="flex items-center gap-2">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Sparkles className="h-5 w-5" />
+              <Gem className="h-5 w-5" />
             </span>
             <span className="text-xl font-bold">{siteConfig.name}</span>
           </Link>
@@ -74,7 +74,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-muted-foreground sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-          <p>© {new Date().getFullYear()} NexaCart AI. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Velora. All rights reserved.</p>
 
           <div className="flex items-center gap-3">
             <Link href={siteConfig.links.github} aria-label="GitHub">

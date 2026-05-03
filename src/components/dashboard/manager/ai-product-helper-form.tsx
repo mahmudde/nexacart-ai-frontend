@@ -94,7 +94,7 @@ export function AiProductHelperForm() {
         </h1>
 
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Describe your product idea and let NexaCart AI suggest a name,
+          Describe your product idea and let Velora suggest a name,
           descriptions, price, tags, and specifications.
         </p>
       </div>

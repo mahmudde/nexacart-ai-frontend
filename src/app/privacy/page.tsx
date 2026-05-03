@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         <PublicPageHero
           eyebrow="Privacy Policy"
           title="Your privacy matters."
-          description="This page explains how NexaCart AI handles user data, marketplace activity, payments, and AI-powered features."
+          description="This page explains how Velora handles user data, marketplace activity, payments, and AI-powered features."
           icon={ShieldCheck}
         />
 

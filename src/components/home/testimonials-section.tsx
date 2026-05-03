@@ -30,7 +30,7 @@ export function TestimonialsSection() {
         centered
         eyebrow="Customer stories"
         title="Trusted by modern shoppers"
-        description="NexaCart AI is designed for fast product discovery, safer checkout, and smarter buying."
+        description="Velora is designed for fast product discovery, safer checkout, and smarter buying."
       />
 
       <div className="grid gap-5 md:grid-cols-3">

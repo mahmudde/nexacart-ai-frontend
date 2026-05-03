@@ -77,7 +77,7 @@ export default function HelpPage() {
           <SectionHeader
             eyebrow="Support topics"
             title="How can we help?"
-            description="Explore the main areas where NexaCart AI supports customers."
+            description="Explore the main areas where Velora supports customers."
           />
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">

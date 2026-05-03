@@ -38,7 +38,7 @@ export function AiShoppingSection() {
           <SectionHeader
             eyebrow="AI shopping"
             title="A smarter buying experience for every customer"
-            description="NexaCart AI helps users find the best products, compare options, and get support without friction."
+            description="Velora helps users find the best products, compare options, and get support without friction."
           />
         </div>
 
