@@ -38,22 +38,22 @@ export function HeroSection() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="glass relative mx-auto grid min-h-[70vh] max-w-7xl items-center gap-10 rounded-[2.5rem] px-6 py-14 md:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-14"
+        className="relative mx-auto grid min-h-[70vh] max-w-7xl items-center gap-10 px-6 py-14 md:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-14"
       >
         <div>
           <motion.p
             variants={fadeUp}
             transition={smoothTransition}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-2 text-sm font-medium text-muted-foreground"
+            className="mb-5 inline-flex items-center gap-2 rounded-md border border-border bg-background/90 px-4 py-2 text-sm font-medium tracking-wide text-muted-foreground uppercase"
           >
-            <Sparkles className="h-4 w-4 text-amber-400" />
+            <Sparkles className="h-4 w-4" />
             AI-powered premium marketplace
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
             transition={smoothTransition}
-            className="text-gradient max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl"
+            className="max-w-4xl text-5xl font-semibold tracking-tight text-foreground md:text-7xl"
           >
             Shop smarter with AI-curated products.
           </motion.h1>
@@ -75,7 +75,7 @@ export function HeroSection() {
           >
             <Link
               href="/products"
-              className={cn(buttonVariants({ size: "lg" }), "rounded-full px-8")}
+              className={cn(buttonVariants({ size: "lg" }), "rounded-md px-8")}
             >
               Explore Products
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -85,7 +85,7 @@ export function HeroSection() {
               href="/products?sort=top-selling"
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "rounded-full bg-background/50 px-8 backdrop-blur-xl"
+                "rounded-md bg-background px-8"
               )}
             >
               View Top Sellers
@@ -95,7 +95,7 @@ export function HeroSection() {
               type="button"
               size="lg"
               variant="outline"
-              className="rounded-full bg-background/50 px-8 backdrop-blur-xl"
+              className="rounded-md bg-background px-8"
               onClick={openChat}
             >
               Ask AI Assistant
@@ -110,7 +110,7 @@ export function HeroSection() {
             {floatingCards.map((item) => (
               <div
                 key={item.title}
-                className="rounded-3xl border border-border bg-background/50 p-4 backdrop-blur-xl"
+                className="rounded-lg border border-border bg-background p-5 shadow-sm"
               >
                 <item.icon className="mb-3 h-5 w-5 text-primary" />
                 <p className="text-sm font-semibold">{item.title}</p>
@@ -125,47 +125,47 @@ export function HeroSection() {
           transition={smoothTransition}
           className="relative"
         >
-          <GlassCard className="relative overflow-hidden p-5">
-            <div className="rounded-[1.5rem] bg-primary p-5 text-primary-foreground">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15">
-                  <Bot className="h-5 w-5" />
+          <div className="relative overflow-hidden rounded-xl border border-border bg-background p-5 shadow-lg">
+            <div className="rounded-lg bg-primary p-6 text-primary-foreground">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-white/10">
+                  <Bot className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="font-semibold">Nexa AI Assistant</p>
+                  <p className="font-semibold text-lg">Nexa AI Assistant</p>
                   <p className="text-sm text-primary-foreground/70">
                     Online now
                   </p>
                 </div>
               </div>
 
-              <div className="mt-8 space-y-3">
-                <div className="max-w-[85%] rounded-3xl bg-white/12 p-4 text-sm">
+              <div className="mt-8 space-y-4">
+                <div className="max-w-[85%] rounded-md bg-white/10 p-4 text-sm leading-relaxed">
                   Looking for top-selling electronics under $100?
                 </div>
 
-                <div className="ml-auto max-w-[88%] rounded-3xl bg-white text-sm text-primary p-4">
+                <div className="ml-auto max-w-[88%] rounded-md bg-white text-sm text-primary p-4 leading-relaxed font-medium">
                   I found premium headphones, gaming mice, and fast chargers
                   with high ratings and strong discounts.
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 pt-3">
-                  <div className="rounded-3xl bg-white/12 p-4">
-                    <p className="text-2xl font-bold">4.8★</p>
-                    <p className="text-sm text-primary-foreground/70">
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="rounded-md bg-white/10 p-5">
+                    <p className="text-3xl font-bold">4.8★</p>
+                    <p className="mt-1 text-sm text-primary-foreground/70">
                       Avg. rating
                     </p>
                   </div>
-                  <div className="rounded-3xl bg-white/12 p-4">
-                    <p className="text-2xl font-bold">24/7</p>
-                    <p className="text-sm text-primary-foreground/70">
+                  <div className="rounded-md bg-white/10 p-5">
+                    <p className="text-3xl font-bold">24/7</p>
+                    <p className="mt-1 text-sm text-primary-foreground/70">
                       Smart support
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </GlassCard>
+          </div>
 
           <div className="absolute -right-4 -top-4 h-28 w-28 rounded-full bg-accent/40 blur-3xl" />
           <div className="absolute -bottom-6 -left-4 h-32 w-32 rounded-full bg-primary/20 blur-3xl" />

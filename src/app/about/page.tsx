@@ -53,9 +53,9 @@ export default function AboutPage() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="glass rounded-[2rem] p-6 transition-all hover:-translate-y-1"
+                className="rounded-xl border border-border bg-background p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-md bg-primary text-primary-foreground">
                   <value.icon className="h-6 w-6" />
                 </div>
 
@@ -70,23 +70,23 @@ export default function AboutPage() {
         </SectionWrapper>
 
         <SectionWrapper className="pt-0">
-          <div className="glass grid gap-6 rounded-[2.5rem] p-8 md:grid-cols-3">
+          <div className="grid gap-6 rounded-xl border border-border bg-background p-10 md:grid-cols-3 shadow-sm">
             <div>
-              <p className="text-4xl font-bold text-gradient">AI</p>
+              <p className="text-4xl font-bold text-foreground">AI</p>
               <p className="mt-2 text-muted-foreground">
                 Search, support, suggestions, and admin insights.
               </p>
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-gradient">Stripe</p>
+              <p className="text-4xl font-bold text-foreground">Stripe</p>
               <p className="mt-2 text-muted-foreground">
                 Secure checkout and payment processing.
               </p>
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-gradient">Cloudinary</p>
+              <p className="text-4xl font-bold text-foreground">Cloudinary</p>
               <p className="mt-2 text-muted-foreground">
                 Fast, reliable product and category image hosting.
               </p>

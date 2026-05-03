@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PublicLayout } from "@/components/layout/public-layout";
 import { ProductsHero } from "@/components/products/products-hero";
@@ -26,7 +26,7 @@ const defaultFilters: ProductFilters = {
   limit: 12,
 };
 
-export default function ProductsPage() {
+function ProductsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -141,5 +141,13 @@ export default function ProductsPage() {
         />
       </main>
     </PublicLayout>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense>
+      <ProductsPageContent />
+    </Suspense>
   );
 }

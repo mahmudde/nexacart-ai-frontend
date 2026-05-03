@@ -18,7 +18,7 @@ export function AdminSalesChart() {
   const chartData = data?.data ?? [];
 
   return (
-    <div className="glass rounded-[2rem] p-6">
+    <div className="rounded-xl border border-border bg-background p-6 shadow-sm">
       <div className="mb-6">
         <h2 className="text-2xl font-semibold">Sales performance</h2>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -27,7 +27,7 @@ export function AdminSalesChart() {
       </div>
 
       {isLoading ? (
-        <Skeleton className="h-[320px] rounded-[1.5rem]" />
+        <Skeleton className="h-[320px] rounded-lg" />
       ) : (
         <div className="h-[320px]">
           <ResponsiveContainer width="100%" height="100%">
@@ -44,7 +44,7 @@ export function AdminSalesChart() {
               <YAxis tickLine={false} axisLine={false} />
               <Tooltip
                 contentStyle={{
-                  borderRadius: "16px",
+                  borderRadius: "8px",
                   border: "1px solid var(--border)",
                   background: "var(--background)",
                   color: "var(--foreground)",

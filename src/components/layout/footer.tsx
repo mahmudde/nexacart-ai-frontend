@@ -26,11 +26,11 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-border bg-background/60 backdrop-blur-xl">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+    <footer className="mt-20 border-t border-border bg-background">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
           <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
               <Sparkles className="h-5 w-5" />
             </span>
             <span className="text-xl font-bold">{siteConfig.name}</span>

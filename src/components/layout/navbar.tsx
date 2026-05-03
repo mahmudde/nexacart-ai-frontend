@@ -41,10 +41,10 @@ export function Navbar() {
   const dashboardPath = getDashboardPath(user?.role);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
+          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
             <Sparkles className="h-5 w-5" />
           </span>
           <span className="text-xl font-bold tracking-tight">
@@ -85,7 +85,7 @@ export function Navbar() {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full bg-background/60"
+            className="rounded-md"
           >
             <Search className="h-4 w-4" />
           </Button>
@@ -94,7 +94,7 @@ export function Navbar() {
             type="button"
             variant="outline"
             size="icon"
-            className="rounded-full bg-background/60"
+            className="rounded-md"
             onClick={openCart}
           >
             <ShoppingBag className="h-4 w-4" />
@@ -108,7 +108,7 @@ export function Navbar() {
                 render={
                   <Button
                     variant="outline"
-                    className="rounded-full bg-background/60 px-3"
+                    className="rounded-md px-3"
                   >
                     <UserCircle className="mr-2 h-4 w-4" />
                     {user.name}
@@ -149,7 +149,7 @@ export function Navbar() {
           ) : (
             <Link
               href="/login"
-              className={cn(buttonVariants(), "rounded-full px-6")}
+              className={cn(buttonVariants(), "rounded-md px-6")}
             >
               Login
             </Link>
@@ -162,7 +162,7 @@ export function Navbar() {
           <Sheet>
             <SheetTrigger
               render={
-                <Button variant="outline" size="icon" className="rounded-full">
+                <Button variant="outline" size="icon" className="rounded-md">
                   <Menu className="h-5 w-5" />
                 </Button>
               }
@@ -176,7 +176,7 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-2xl px-4 py-3 text-base font-medium transition-colors hover:bg-muted"
+                    className="rounded-md px-4 py-3 text-base font-medium transition-colors hover:bg-muted"
                   >
                     {link.label}
                   </Link>
@@ -186,14 +186,14 @@ export function Navbar() {
                   <>
                     <Link
                       href="/wishlist"
-                      className="rounded-2xl px-4 py-3 text-base font-medium transition-colors hover:bg-muted"
+                      className="rounded-md px-4 py-3 text-base font-medium transition-colors hover:bg-muted"
                     >
                       Wishlist
                     </Link>
 
                     <Link
                       href={dashboardPath}
-                      className="rounded-2xl px-4 py-3 text-base font-medium transition-colors hover:bg-muted"
+                      className="rounded-md px-4 py-3 text-base font-medium transition-colors hover:bg-muted"
                     >
                       Dashboard
                     </Link>
@@ -202,7 +202,7 @@ export function Navbar() {
 
                 {isAuthenticated ? (
                   <Button
-                    className="mt-4 rounded-full"
+                    className="mt-4 rounded-md"
                     variant="outline"
                     onClick={() => logoutMutation.mutate()}
                   >
@@ -211,7 +211,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     href="/login"
-                    className={cn(buttonVariants(), "mt-4 rounded-full")}
+                    className={cn(buttonVariants(), "mt-4 rounded-md")}
                   >
                     Login
                   </Link>

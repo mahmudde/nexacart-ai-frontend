@@ -11,7 +11,7 @@ export function AdminRecentOrders() {
   const orders = data?.data ?? [];
 
   return (
-    <div className="glass rounded-[2rem] p-6">
+    <div className="rounded-xl border border-border bg-background p-6 shadow-sm">
       <div className="mb-6">
         <h2 className="flex items-center gap-2 text-2xl font-semibold">
           <ShoppingCart className="h-5 w-5" />
@@ -25,13 +25,13 @@ export function AdminRecentOrders() {
       {isLoading && (
         <div className="space-y-3">
           {Array.from({ length: 5 }).map((_, index) => (
-            <Skeleton key={index} className="h-16 rounded-2xl" />
+            <Skeleton key={index} className="h-16 rounded-lg" />
           ))}
         </div>
       )}
 
       {!isLoading && orders.length === 0 && (
-        <div className="rounded-[1.5rem] border border-border bg-background/50 p-8 text-center">
+        <div className="rounded-lg border border-border bg-background/50 p-8 text-center">
           <p className="font-medium">No recent orders</p>
           <p className="mt-1 text-sm text-muted-foreground">
             New orders will appear here.
@@ -44,7 +44,7 @@ export function AdminRecentOrders() {
           {orders.map((order) => (
             <div
               key={order.id}
-              className="rounded-[1.5rem] border border-border bg-background/50 p-4"
+              className="rounded-lg border border-border bg-background/50 p-4"
             >
               <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
                 <div>
@@ -56,13 +56,13 @@ export function AdminRecentOrders() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-muted px-3 py-1 text-xs">
+                  <span className="rounded-md bg-muted px-3 py-1 text-xs">
                     {order.status}
                   </span>
-                  <span className="rounded-full bg-muted px-3 py-1 text-xs">
+                  <span className="rounded-md bg-muted px-3 py-1 text-xs">
                     {order.paymentStatus}
                   </span>
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  <span className="rounded-md bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
                     ${Number(order.total).toFixed(2)}
                   </span>
                 </div>

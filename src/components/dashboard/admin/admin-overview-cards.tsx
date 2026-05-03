@@ -88,7 +88,7 @@ export function AdminOverviewCards() {
     return (
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         {Array.from({ length: 10 }).map((_, index) => (
-          <Skeleton key={index} className="h-36 rounded-[1.75rem]" />
+          <Skeleton key={index} className="h-36 rounded-lg" />
         ))}
       </div>
     );
@@ -102,9 +102,9 @@ export function AdminOverviewCards() {
         return (
           <div
             key={card.key}
-            className="glass rounded-[1.75rem] p-5 transition-all hover:-translate-y-1"
+            className="rounded-lg border border-border bg-background p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
           >
-            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <card.icon className="h-5 w-5" />
             </div>
 

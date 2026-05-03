@@ -10,13 +10,13 @@ export default function AdminDashboardPage() {
   return (
     <AdminDashboardShell>
       <div className="space-y-8">
-        <div className="glass rounded-[2.5rem] p-8">
+        <div className="rounded-xl border border-border bg-background p-8 shadow-sm">
           <p className="mb-3 text-sm text-muted-foreground">
             Manage users, products, orders, content, support, and marketplace
             performance.
           </p>
 
-          <h1 className="text-gradient text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
             Admin Dashboard
           </h1>
 

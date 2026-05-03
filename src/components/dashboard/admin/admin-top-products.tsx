@@ -11,7 +11,7 @@ export function AdminTopProducts() {
   const products = data?.data ?? [];
 
   return (
-    <div className="glass rounded-[2rem] p-6">
+    <div className="rounded-xl border border-border bg-background p-6 shadow-sm">
       <div className="mb-6">
         <h2 className="flex items-center gap-2 text-2xl font-semibold">
           <TrendingUp className="h-5 w-5" />
@@ -25,13 +25,13 @@ export function AdminTopProducts() {
       {isLoading && (
         <div className="space-y-3">
           {Array.from({ length: 5 }).map((_, index) => (
-            <Skeleton key={index} className="h-16 rounded-2xl" />
+            <Skeleton key={index} className="h-16 rounded-lg" />
           ))}
         </div>
       )}
 
       {!isLoading && products.length === 0 && (
-        <div className="rounded-[1.5rem] border border-border bg-background/50 p-8 text-center">
+        <div className="rounded-lg border border-border bg-background/50 p-8 text-center">
           <p className="font-medium">No product data yet</p>
           <p className="mt-1 text-sm text-muted-foreground">
             Products will appear here after sales activity.
@@ -45,10 +45,10 @@ export function AdminTopProducts() {
             <Link
               key={product.id}
               href={`/products/${product.slug}`}
-              className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-border bg-background/50 p-4 transition-colors hover:bg-muted/50"
+              className="flex items-center justify-between gap-4 rounded-lg border border-border bg-background/50 p-4 transition-colors hover:bg-muted/50"
             >
               <div className="flex min-w-0 items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary text-sm font-semibold text-primary-foreground">
                   {index + 1}
                 </span>
 
@@ -61,7 +61,7 @@ export function AdminTopProducts() {
                 </div>
               </div>
 
-              <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium">
+              <span className="rounded-md bg-muted px-3 py-1 text-xs font-medium">
                 Sold: {product.soldCount}
               </span>
             </Link>

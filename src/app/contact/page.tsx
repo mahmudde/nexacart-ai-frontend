@@ -55,7 +55,7 @@ export default function ContactPage() {
         <SectionWrapper>
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="space-y-4">
-              <div className="glass rounded-[2rem] p-6">
+              <div className="rounded-lg border border-border bg-background p-8 shadow-sm">
                 <MapPin className="mb-4 h-6 w-6 text-primary" />
                 <h2 className="text-xl font-semibold">Location</h2>
                 <p className="mt-2 text-muted-foreground">
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="glass rounded-[2rem] p-6">
+              <div className="rounded-lg border border-border bg-background p-8 shadow-sm">
                 <Mail className="mb-4 h-6 w-6 text-primary" />
                 <h2 className="text-xl font-semibold">Email</h2>
                 <p className="mt-2 text-muted-foreground">
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="glass rounded-[2rem] p-6">
+              <div className="rounded-lg border border-border bg-background p-8 shadow-sm">
                 <Phone className="mb-4 h-6 w-6 text-primary" />
                 <h2 className="text-xl font-semibold">Phone</h2>
                 <p className="mt-2 text-muted-foreground">
@@ -80,7 +80,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="glass rounded-[2.5rem] p-6 md:p-8">
+            <div className="rounded-xl border border-border bg-background p-8 md:p-10 shadow-sm">
               <h2 className="text-3xl font-semibold">Send a message</h2>
               <p className="mt-2 text-muted-foreground">
                 We usually respond as soon as possible.
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       setForm((prev) => ({ ...prev, name: event.target.value }))
                     }
                     placeholder="Your name"
-                    className="h-12 rounded-full bg-background/60 px-5"
+                    className="h-12 rounded-md px-4"
                   />
 
                   <Input
@@ -104,7 +104,7 @@ export default function ContactPage() {
                     }
                     placeholder="Your email"
                     type="email"
-                    className="h-12 rounded-full bg-background/60 px-5"
+                    className="h-12 rounded-md px-4"
                   />
                 </div>
 
@@ -114,7 +114,7 @@ export default function ContactPage() {
                     setForm((prev) => ({ ...prev, subject: event.target.value }))
                   }
                   placeholder="Subject"
-                  className="h-12 rounded-full bg-background/60 px-5"
+                  className="h-12 rounded-md px-4"
                 />
 
                 <Textarea
@@ -123,12 +123,12 @@ export default function ContactPage() {
                     setForm((prev) => ({ ...prev, message: event.target.value }))
                   }
                   placeholder="Write your message..."
-                  className="min-h-40 rounded-[1.5rem] bg-background/60 p-5"
+                  className="min-h-40 rounded-md p-4"
                 />
 
                 <Button
                   type="button"
-                  className="h-12 rounded-full md:w-fit md:px-8"
+                  className="h-12 rounded-md md:w-fit md:px-8"
                   disabled={isLoading}
                   onClick={handleSubmit}
                 >

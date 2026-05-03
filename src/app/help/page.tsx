@@ -82,7 +82,7 @@ export default function HelpPage() {
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {helpTopics.map((topic) => (
-              <div key={topic.title} className="glass rounded-[2rem] p-6">
+              <div key={topic.title} className="rounded-lg border border-border bg-background p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                 <topic.icon className="mb-5 h-7 w-7 text-primary" />
                 <h3 className="text-xl font-semibold">{topic.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -101,7 +101,7 @@ export default function HelpPage() {
             description="Quick answers about shopping, payment, support, and AI features."
           />
 
-          <div className="glass mx-auto max-w-3xl rounded-[2rem] p-4">
+          <div className="mx-auto max-w-3xl rounded-xl border border-border bg-background p-6 shadow-sm">
             <Accordion>
               {faqs.map((faq, index) => (
                 <AccordionItem key={faq.question} value={`faq-${index}`}>
@@ -118,7 +118,7 @@ export default function HelpPage() {
         </SectionWrapper>
 
         <SectionWrapper className="pt-0">
-          <div className="glass rounded-[2.5rem] p-8 text-center">
+          <div className="rounded-xl border border-border bg-background p-10 text-center shadow-sm">
             <ShieldCheck className="mx-auto mb-5 h-10 w-10 text-primary" />
             <h2 className="text-3xl font-semibold">Still need help?</h2>
             <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">

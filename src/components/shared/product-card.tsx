@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PriceDisplay } from "./price-display";
 import { RatingStars } from "./rating-stars";
+import { useAddToCart } from "@/hooks/use-cart";
+import { useAddToWishlist } from "@/hooks/use-wishlist";
 
 type ProductCardProps = {
   product: Product;
@@ -20,13 +22,29 @@ export function ProductCard({ product }: ProductCardProps) {
   const hasDiscount = Boolean(product.discountPrice);
   const isTopSelling = product.soldCount > 50;
 
+  const addToCartMutation = useAddToCart();
+  const addToWishlistMutation = useAddToWishlist();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToCartMutation.mutate({
+      productId: product.id,
+      quantity: 1,
+    });
+  };
+
+  const handleAddToWishlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToWishlistMutation.mutate(product.id);
+  };
+
   return (
     <motion.article
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
-      className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border bg-card/80 shadow-sm backdrop-blur-xl transition-all hover:shadow-2xl"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="group flex h-full flex-col overflow-hidden rounded-xl border border-border/50 bg-card transition-all hover:border-border hover:shadow-xl"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
         <Image
           src={image}
           alt={product.images?.[0]?.altText || product.name}
@@ -38,14 +56,14 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
           {isTopSelling && (
-            <Badge className="rounded-full bg-primary text-primary-foreground">
+            <Badge className="rounded-md bg-primary text-primary-foreground">
               <Sparkles className="mr-1 h-3 w-3" />
               Top Selling
             </Badge>
           )}
 
           {hasDiscount && (
-            <Badge className="rounded-full bg-amber-400 text-slate-950">
+            <Badge className="rounded-md bg-amber-400 text-slate-950">
               Discount
             </Badge>
           )}
@@ -54,8 +72,10 @@ export function ProductCard({ product }: ProductCardProps) {
         <Button
           size="icon"
           variant="secondary"
-          className="absolute right-4 top-4 rounded-full bg-background/80 backdrop-blur-xl"
+          className="absolute right-4 top-4 rounded-md bg-background/80 backdrop-blur-md opacity-0 transition-opacity group-hover:opacity-100"
           aria-label="Add to wishlist"
+          disabled={addToWishlistMutation.isPending}
+          onClick={handleAddToWishlist}
         >
           <Heart className="h-4 w-4" />
         </Button>
@@ -69,7 +89,7 @@ export function ProductCard({ product }: ProductCardProps) {
             size="sm"
           />
 
-          <span className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
+          <span className="rounded-md bg-muted px-2 py-1 text-xs font-medium text-muted-foreground">
             {product.stock > 0 ? `${product.stock} left` : "Out of stock"}
           </span>
         </div>
@@ -89,18 +109,23 @@ export function ProductCard({ product }: ProductCardProps) {
           />
         </div>
 
-        <div className="mt-auto flex gap-2 pt-5">
+        <div className="mt-auto flex gap-2 pt-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <Link
             href={`/products/${product.slug}`}
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "flex-1 rounded-full"
+              "flex-1 rounded-md"
             )}
           >
             View Details
           </Link>
 
-          <Button className="rounded-full px-4" aria-label="Add to cart">
+          <Button 
+            className="rounded-md px-4" 
+            aria-label="Add to cart"
+            disabled={product.stock <= 0 || addToCartMutation.isPending}
+            onClick={handleAddToCart}
+          >
             <ShoppingBag className="h-4 w-4" />
           </Button>
         </div>
